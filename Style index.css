@@ -1,0 +1,154 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #0f0f0f;
+  }
+  
+  /* Navbar */
+  .navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 60px; /* Altezza della navbar */
+    left: 0;
+    width: 220px;
+    height: calc(100% - 60px);
+    background-color: #f1f1f1;
+    padding-top: 20px;
+    overflow-y: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #0dcaf0;
+    color: white;
+    border-radius: 10px;
+    padding-left: 25px;
+  }
+  
+  /* Link attivo */
+  .sidebar a.active {
+    background-color: #0dcaf0;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  /* Main content */
+  main {
+    margin-left: 220px;
+    padding: 80px 20px 20px 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #212529;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Video grid (opzionale se aggiungi video) */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Video card */
+  .video-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+  
+  .video-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  
+  .video-info {
+    padding: 10px;
+  }
+  
+  .video-info h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .video-info p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Responsive sidebar */
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    
+    .sidebar a {
+      float: left;
+    }
+    
+    main {
+      margin-left: 0;
+      padding-top: 100px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  
+  /* Dark mode automatico */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    
+    .sidebar {
+      background-color: #1f1f1f;
+    }
+    
+    .navbar, footer {
+      background-color: #000 !important;
+    }
+    
+    .video-card {
+      background-color: #1f1f1f;
+    }
+  }
+  
